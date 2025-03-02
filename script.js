@@ -27,12 +27,14 @@ const canvas = document.getElementById('myCanvas')
 const ctx = canvas.getContext('2d');
 
 var modelParameters = {
-    "a":1e-3,
-    "b":1e-4,
-    "d":1e-5,
-    "alpha":1,
-    "beta":1,
-    "gamma":1
+    "is":1e-12,
+    "eta":1.5
+    // "a":1e-3,
+    // "b":1e-4,
+    // "d":1e-5,
+    // "alpha":1,
+    // "beta":1,
+    // "gamma":1
 };
 
 function xToCanvas(x){
