@@ -4,8 +4,8 @@ const fileNames = [];
 const colors = []
 
 for (let i of [1, 2, 3]) {
-    for (let size of [1, 5, 10]) {
-        for (let temp of [25, 40, 120]) {
+    for (let size of [1, 5, 10 ]) {
+        for (let temp of [40, 25, 120]) {
             fileNames.push(`json_data/s${i}_${size}_${size}_${temp}C.json`);
             colors.push(getRandomHexColor());
         }
@@ -27,7 +27,15 @@ const canvas = document.getElementById('myCanvas')
 const ctx = canvas.getContext('2d');
 
 var modelParameters = {
-    "is":1e-12,
+    // "is":1e-12,
+    "Js0":1e-3,
+    "Xti1":3.0,
+    "Nj":1.0,
+
+    "Jssw0":1e-6,
+    "Xti2":3.0,
+    "Njssw":1.0,
+
     "eta":1.5
     // "a":1e-3,
     // "b":1e-4,
@@ -270,7 +278,7 @@ function plotData(xArray, yArray, color) {
         let yCanvas = yToCanvas(yArray[i]);
 
         ctx.beginPath();
-        ctx.arc(xCanvas, yCanvas, 3, 0, 2 * Math.PI); // Draw small circles
+        ctx.arc(xCanvas, yCanvas, 2, 0, 2 * Math.PI); // Draw small circles
         ctx.fill();
     }
 }
